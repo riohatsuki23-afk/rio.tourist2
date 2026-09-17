@@ -1,140 +1,339 @@
 {
   "trip": {
     "title": "法国深度旅行",
+    "subtitle": "France Deep Travel",
     "country": "France",
     "date_start": "2026-09-25",
-    "date_end": "2026-10-04"
+    "date_end": "2026-10-04",
+    "duration_days": 10,
+    "cities": [
+      "Paris",
+      "Rouen",
+      "Étretat",
+      "Honfleur",
+      "Mont-Saint-Michel",
+      "Loire Valley",
+      "Fontainebleau"
+    ],
+    "cover_image": null,
+    "description": "一次法国文化、艺术、美食与自驾结合的深度旅行"
   },
+
+  "countdown": {
+    "enabled": true,
+    "target_date": "2026-09-25T00:00:00"
+  },
+
   "flights": [
     {
+      "id": 1,
       "flight": "AY5129",
-      "from": "Hong Kong",
-      "to": "Bangkok"
+      "airline": "Finnair",
+      "date": "2026-09-25",
+      "from": {
+        "city": "Hong Kong",
+        "airport": null,
+        "time": null
+      },
+      "to": {
+        "city": "Bangkok",
+        "airport": null,
+        "time": null
+      },
+      "duration": null,
+      "status": "departure"
     },
     {
+      "id": 2,
       "flight": "AY0142",
-      "from": "Bangkok",
-      "to": "Helsinki"
+      "airline": "Finnair",
+      "date": "2026-09-26",
+      "from": {
+        "city": "Bangkok",
+        "airport": null,
+        "time": null
+      },
+      "to": {
+        "city": "Helsinki",
+        "airport": null,
+        "time": null
+      },
+      "duration": null,
+      "status": "transfer"
     },
     {
+      "id": 3,
       "flight": "AY1577",
-      "from": "Helsinki",
-      "to": "Paris"
+      "airline": "Finnair",
+      "date": "2026-09-26",
+      "from": {
+        "city": "Helsinki",
+        "airport": null,
+        "time": null
+      },
+      "to": {
+        "city": "Paris",
+        "airport": "CDG",
+        "time": null
+      },
+      "duration": null,
+      "status": "arrival"
     }
   ],
+
   "hotels": [
     {
-      "period": "09/25-09/30",
-      "city": "Paris"
+      "period": "2026-09-25 to 2026-09-30",
+      "city": "Paris",
+      "name": null,
+      "address": null,
+      "google_map": null
     },
     {
-      "period": "09/30-10/01",
-      "name": "图尔热维尔狮子庄园酒店"
+      "period": "2026-09-30 to 2026-10-01",
+      "city": "Tourgéville",
+      "name": "图尔热维尔狮子庄园酒店",
+      "address": null,
+      "google_map": null
     },
     {
-      "period": "10/01-10/02",
-      "name": "拉梅蒂埃城堡酒店"
+      "period": "2026-10-01 to 2026-10-02",
+      "city": null,
+      "name": "拉梅蒂埃城堡酒店",
+      "address": null,
+      "google_map": null
     },
     {
-      "period": "10/02-10/03",
-      "name": "丰泰夫罗拉酒店"
+      "period": "2026-10-02 to 2026-10-03",
+      "city": null,
+      "name": "丰泰夫罗拉酒店",
+      "address": null,
+      "google_map": null
     },
     {
-      "period": "10/03-10/04",
-      "name": "枫丹白露酒店"
+      "period": "2026-10-03 to 2026-10-04",
+      "city": "Fontainebleau",
+      "name": "枫丹白露酒店",
+      "address": null,
+      "google_map": null
     }
   ],
+
+  "transport": {
+    "arrival": {
+      "type": "flight",
+      "location": "Paris Charles de Gaulle Airport",
+      "code": "CDG"
+    },
+
+    "car_rental": {
+      "enabled": true,
+      "pickup": {
+        "location": "Paris Charles de Gaulle Airport",
+        "date": "2026-09-30",
+        "time": "09:30",
+        "company": null
+      },
+      "dropoff": {
+        "location": "Paris Charles de Gaulle Airport",
+        "date": "2026-10-04",
+        "time": "15:00"
+      }
+    },
+
+    "public_transport": {
+      "metro": true,
+      "train": true,
+      "notes": [
+        "巴黎市区主要使用地铁和步行",
+        "城际移动建议提前确认火车时间"
+      ]
+    },
+
+    "france_driving_tips": [
+      {
+        "title": "高速公路收费",
+        "content": "法国高速多数为收费高速，需要准备信用卡或现金支付"
+      },
+      {
+        "title": "环岛规则",
+        "content": "进入环岛前注意让行规则，按照道路标识行驶"
+      },
+      {
+        "title": "限速",
+        "content": "不同道路限速不同，需要关注沿途交通标志"
+      },
+      {
+        "title": "停车",
+        "content": "法国城市停车规则复杂，建议提前确认停车区域"
+      },
+      {
+        "title": "环保区域",
+        "content": "部分城市进入限制区域可能需要环保贴"
+      }
+    ]
+  },
   "days": [
     {
       "day": 1,
+      "date": "2026-09-25",
       "title": "抵达巴黎",
+      "route": "Hong Kong → Bangkok → Helsinki → Paris",
+      "locations": [
+        {
+          "name": "Paris Charles de Gaulle Airport",
+          "google_map": "https://maps.google.com/?q=Paris+Charles+de+Gaulle+Airport"
+        }
+      ],
       "timeline": [
         {
           "time": "18:15",
-          "title": "抵达CDG机场"
+          "title": "抵达CDG机场",
+          "location": "CDG Airport",
+          "google_map": "https://maps.google.com/?q=Charles+de+Gaulle+Airport"
         }
       ]
     },
+
     {
       "day": 2,
+      "date": "2026-09-26",
       "title": "巴黎文青路线",
+      "route": "Paris City Walk",
+      "locations": [
+        {
+          "name": "Sainte-Chapelle",
+          "google_map": "https://maps.google.com/?q=Sainte-Chapelle+Paris"
+        },
+        {
+          "name": "Shakespeare and Company",
+          "google_map": "https://maps.google.com/?q=Shakespeare+and+Company+Paris"
+        },
+        {
+          "name": "Luxembourg Gardens",
+          "google_map": "https://maps.google.com/?q=Luxembourg+Gardens+Paris"
+        }
+      ],
       "timeline": [
         {
-          "title": "圣礼拜堂"
+          "title": "圣礼拜堂",
+          "location": "Sainte-Chapelle",
+          "google_map": "https://maps.google.com/?q=Sainte-Chapelle+Paris"
         },
         {
-          "title": "莎士比亚书店"
+          "title": "莎士比亚书店",
+          "location": "Shakespeare and Company",
+          "google_map": "https://maps.google.com/?q=Shakespeare+and+Company+Paris"
         },
         {
-          "title": "卢森堡公园"
+          "title": "卢森堡公园",
+          "location": "Luxembourg Gardens",
+          "google_map": "https://maps.google.com/?q=Luxembourg+Gardens+Paris"
         }
       ]
     },
+
     {
       "day": 3,
+      "date": "2026-09-27",
       "title": "艺术家的一天",
+      "route": "Paris Art Route",
       "timeline": [
         {
-          "title": "卢浮宫"
+          "title": "卢浮宫",
+          "location": "Louvre Museum",
+          "google_map": "https://maps.google.com/?q=Louvre+Museum"
         },
         {
-          "title": "奥赛博物馆"
+          "title": "奥赛博物馆",
+          "location": "Musée d'Orsay",
+          "google_map": "https://maps.google.com/?q=Musee+d'Orsay"
         },
         {
-          "title": "蒙马特"
+          "title": "蒙马特",
+          "location": "Montmartre",
+          "google_map": "https://maps.google.com/?q=Montmartre+Paris"
         }
       ]
     },
+
     {
       "day": 4,
+      "date": "2026-09-28",
       "title": "巴黎周边",
+      "route": "Paris Surroundings",
       "timeline": []
     },
+
     {
       "day": 5,
+      "date": "2026-09-29",
       "title": "凡尔赛",
+      "route": "Versailles",
       "timeline": []
     },
+
     {
       "day": 6,
+      "date": "2026-09-30",
       "title": "巴黎 → 鲁昂 → 埃特勒塔 → 翁弗勒尔",
+      "route": "Paris → Rouen → Étretat → Honfleur",
       "timeline": [
         {
           "time": "09:30",
-          "title": "戴高乐机场取车"
+          "title": "戴高乐机场取车",
+          "location": "Charles de Gaulle Airport",
+          "google_map": "https://maps.google.com/?q=Charles+de+Gaulle+Airport"
         },
         {
           "time": "15:00",
-          "title": "埃特勒塔"
+          "title": "埃特勒塔",
+          "location": "Étretat",
+          "google_map": "https://maps.google.com/?q=Etretat+France"
         }
       ]
     },
+
     {
       "day": 7,
+      "date": "2026-10-01",
       "title": "奥马哈滩 → 圣米歇尔山",
+      "route": "Omaha Beach → Mont-Saint-Michel",
       "timeline": []
     },
+
     {
       "day": 8,
+      "date": "2026-10-02",
       "title": "Loire路线",
+      "route": "Loire Valley",
       "timeline": []
     },
+
     {
       "day": 9,
+      "date": "2026-10-03",
       "title": "城堡巡游 → 枫丹白露",
+      "route": "Loire Valley → Fontainebleau",
       "timeline": []
     },
+
     {
       "day": 10,
+      "date": "2026-10-04",
       "title": "枫丹白露 → CDG机场",
+      "route": "Fontainebleau → Charles de Gaulle Airport",
       "timeline": [
         {
           "time": "15:00",
-          "title": "机场还车"
+          "title": "机场还车",
+          "location": "Paris Charles de Gaulle Airport",
+          "google_map": "https://maps.google.com/?q=Charles+de+Gaulle+Airport"
         }
       ]
     }
   ],
+
   "privacy_excluded": [
     "passport_number",
     "id_number",
