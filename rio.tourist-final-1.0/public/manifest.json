@@ -1,0 +1,6 @@
+{
+  "name": "rio.tourist",
+  "short_name": "rio",
+  "display": "standalone",
+  "start_url": "/"
+}
