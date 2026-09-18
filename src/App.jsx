@@ -19,8 +19,8 @@ const PARIS_TIME_ZONE = "Europe/Paris";
 
 const DEV_PREVIEW = {
   enabled: false,
-  date: "2026-09-29",
-  time: "09:00",
+  date: "2026-10-02",
+  time: "19:31",
 };
 
 function getParisNow() {
@@ -100,6 +100,36 @@ function getTripStatus() {
     paris,
     today: today || null,
   };
+}
+
+function getMinutesUntil(entry, parisTime) {
+  if (!entry || entry.minutes === null) return null;
+
+  const nowMinutes =
+    parisTime.hour * 60 + parisTime.minute;
+
+  return Math.max(0, entry.minutes - nowMinutes);
+}
+
+function formatMinutesUntil(minutes) {
+  if (minutes === null) return "";
+
+  if (minutes < 1) {
+    return "NOW";
+  }
+
+  if (minutes < 60) {
+    return `IN ${minutes} MIN`;
+  }
+
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = minutes % 60;
+
+  if (remainingMinutes === 0) {
+    return `IN ${hours} HR`;
+  }
+
+  return `IN ${hours} HR ${remainingMinutes} MIN`;
 }
 
 function getDayProgress(day, parisTime) {
@@ -326,10 +356,19 @@ function JourneySection() {
       ? getDayProgress(today, tripStatus.paris)
       : { current: null, next: null };
 
+  const minutesUntilNext =
+    progress.next && tripStatus.phase === "traveling"
+      ? getMinutesUntil(progress.next, tripStatus.paris)
+      : null;
+
+  const nextCountdown =
+    minutesUntilNext !== null
+      ? formatMinutesUntil(minutesUntilNext)
+      : "";
+
   const [openDay, setOpenDay] = useState(
     today ? today.day : null
   );
-
   return (
     <section id="journey" className="content-section journey-section">
       <SectionHeading number="02" label="JOURNEY" title="法国 · 10日" />
@@ -359,19 +398,48 @@ function JourneySection() {
       </div>
     )}
 
-    {progress.next && (
-      <div className="live-item next-item">
-        <span>NEXT</span>
+{progress.next && (
+  <div className="live-item next-item">
+    <span>NEXT</span>
 
-        <div>
-          <time>{progress.next.item.time}</time>
-          <strong>{progress.next.item.title}</strong>
-        </div>
+    <div>
+      <div className="next-time-row">
+        <time>{progress.next.item.time}</time>
+
+        {nextCountdown && (
+          <span className="next-countdown">
+            {nextCountdown}
+          </span>
+        )}
       </div>
-    )}
+
+      <strong>{progress.next.item.title}</strong>
+
+      {(progress.next.item.reservation === true ||
+        progress.next.item.priority === "fixed") && (
+        <div className="live-status-row">
+          {progress.next.item.reservation === true && (
+            <span className="live-status reserved">
+              RESERVED · 已预约
+            </span>
+          )}
+
+          {progress.next.item.reservation !== true &&
+            progress.next.item.priority === "fixed" && (
+              <span className="live-status fixed">
+                FIXED · 固定时间
+              </span>
+            )}
+           </div>
+      )}
+    </div>
   </div>
 )}
-      <div className="journey-list">
+
+  </div>
+)}
+
+<div className="journey-list">
         {travelData.days.map((day) => {
           const isOpen = openDay === day.day;
   const isToday =
