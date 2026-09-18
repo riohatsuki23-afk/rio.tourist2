@@ -15,6 +15,139 @@ function formatDate(dateString) {
     .toUpperCase();
 }
 
+const PARIS_TIME_ZONE = "Europe/Paris";
+
+const DEV_PREVIEW = {
+  enabled: false,
+  date: "2026-09-29",
+  time: "09:00",
+};
+
+function getParisNow() {
+  if (DEV_PREVIEW.enabled) {
+    const [hour, minute] = DEV_PREVIEW.time.split(":").map(Number);
+
+    return {
+      date: DEV_PREVIEW.date,
+      time: DEV_PREVIEW.time,
+      hour,
+      minute,
+    };
+  }
+
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: PARIS_TIME_ZONE,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hourCycle: "h23",
+  }).formatToParts(new Date());
+
+  const values = Object.fromEntries(
+    parts
+      .filter((part) => part.type !== "literal")
+      .map((part) => [part.type, part.value])
+  );
+
+  return {
+    date: `${values.year}-${values.month}-${values.day}`,
+    time: `${values.hour}:${values.minute}`,
+    hour: Number(values.hour),
+    minute: Number(values.minute),
+  };
+}
+
+function timeToMinutes(timeString) {
+  if (!timeString) return null;
+
+  const match = timeString.match(/(\d{1,2}):(\d{2})/);
+
+  if (!match) return null;
+
+  return Number(match[1]) * 60 + Number(match[2]);
+}
+
+function getTripStatus() {
+  const paris = getParisNow();
+  const start = travelData.trip.date_start;
+  const end = travelData.trip.date_end;
+
+  if (paris.date < start) {
+    return {
+      phase: "upcoming",
+      paris,
+      today: null,
+    };
+  }
+
+  if (paris.date > end) {
+    return {
+      phase: "completed",
+      paris,
+      today: null,
+    };
+  }
+
+  const today = travelData.days.find(
+    (day) => day.date === paris.date
+  );
+
+  return {
+    phase: "traveling",
+    paris,
+    today: today || null,
+  };
+}
+
+function getDayProgress(day, parisTime) {
+  if (!day?.timeline?.length) {
+    return {
+      current: null,
+      next: null,
+    };
+  }
+
+  const nowMinutes =
+    parisTime.hour * 60 + parisTime.minute;
+
+  const timedItems = day.timeline
+    .map((item, index) => ({
+      item,
+      index,
+      minutes: timeToMinutes(item.time),
+    }))
+    .filter((entry) => entry.minutes !== null);
+
+  if (!timedItems.length) {
+    return {
+      current: null,
+      next: null,
+    };
+  }
+
+  let current = null;
+  let next = null;
+
+  for (const entry of timedItems) {
+    if (entry.minutes <= nowMinutes) {
+      current = entry;
+    }
+
+    if (entry.minutes > nowMinutes) {
+      next = entry;
+      break;
+    }
+  }
+
+  return {
+    current,
+    next,
+  };
+}
+
 function Countdown({ targetDate }) {
   const calculate = () => {
     const diff = new Date(targetDate).getTime() - Date.now();
@@ -185,19 +318,70 @@ function SectionHeading({ number, label, title }) {
 }
 
 function JourneySection() {
-  const [openDay, setOpenDay] = useState(null);
+  const tripStatus = getTripStatus();
+  const today = tripStatus.today;
+
+  const progress =
+    tripStatus.phase === "traveling" && today
+      ? getDayProgress(today, tripStatus.paris)
+      : { current: null, next: null };
+
+  const [openDay, setOpenDay] = useState(
+    today ? today.day : null
+  );
 
   return (
     <section id="journey" className="content-section journey-section">
       <SectionHeading number="02" label="JOURNEY" title="法国 · 10日" />
+{tripStatus.phase === "traveling" && today && (
+  <div className="today-panel">
+    <div className="today-panel-top">
+      <div>
+        <span className="today-label">TODAY</span>
+        <strong>
+          DAY {String(today.day).padStart(2, "0")}
+        </strong>
+      </div>
 
+      <time>{formatDate(today.date)}</time>
+    </div>
+
+    <h3>{today.title}</h3>
+
+    {progress.current && (
+      <div className="live-item now-item">
+        <span>NOW</span>
+
+        <div>
+          <time>{progress.current.item.time}</time>
+          <strong>{progress.current.item.title}</strong>
+        </div>
+      </div>
+    )}
+
+    {progress.next && (
+      <div className="live-item next-item">
+        <span>NEXT</span>
+
+        <div>
+          <time>{progress.next.item.time}</time>
+          <strong>{progress.next.item.title}</strong>
+        </div>
+      </div>
+    )}
+  </div>
+)}
       <div className="journey-list">
         {travelData.days.map((day) => {
           const isOpen = openDay === day.day;
-
+  const isToday =
+    tripStatus.phase === "traveling" &&
+    today?.day === day.day;
           return (
             <article
-              className={`day ${isOpen ? "day-open" : ""}`}
+              className={`day ${isOpen ? "day-open" : ""} ${
+  isToday ? "day-today" : ""
+}`}
               key={day.day}
             >
               <button
