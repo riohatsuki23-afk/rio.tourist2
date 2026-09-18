@@ -270,210 +270,515 @@
     ]
   },
   "days": [
-    {
-      "day": 1,
-      "date": "2026-09-25",
-      "title": "抵达巴黎",
-      "route": "Hong Kong → Bangkok → Helsinki → Paris",
-      "locations": [
-        {
-          "name": "Paris Charles de Gaulle Airport",
-          "google_map": "https://maps.google.com/?q=Paris+Charles+de+Gaulle+Airport"
-        }
-      ],
-      "timeline": [
-        {
-          "time": "18:15",
-          "title": "抵达CDG机场",
-          "location": "CDG Airport",
-          "google_map": "https://maps.google.com/?q=Charles+de+Gaulle+Airport"
-        }
-      ]
-    },
-
-    {
-      "day": 2,
-      "date": "2026-09-26",
-      "title": "巴黎文青路线",
-      "route": "Paris City Walk",
-      "locations": [
-        {
-          "name": "Sainte-Chapelle",
-          "google_map": "https://maps.google.com/?q=Sainte-Chapelle+Paris"
-        },
-        {
-          "name": "Shakespeare and Company",
-          "google_map": "https://maps.google.com/?q=Shakespeare+and+Company+Paris"
-        },
-        {
-          "name": "Luxembourg Gardens",
-          "google_map": "https://maps.google.com/?q=Luxembourg+Gardens+Paris"
-        }
-      ],
-      "timeline": [
-        {
-          "title": "圣礼拜堂",
-          "location": "Sainte-Chapelle",
-          "google_map": "https://maps.google.com/?q=Sainte-Chapelle+Paris"
-        },
-        {
-          "title": "莎士比亚书店",
-          "location": "Shakespeare and Company",
-          "google_map": "https://maps.google.com/?q=Shakespeare+and+Company+Paris"
-        },
-        {
-          "title": "卢森堡公园",
-          "location": "Luxembourg Gardens",
-          "google_map": "https://maps.google.com/?q=Luxembourg+Gardens+Paris"
-        }
-      ]
-    },
-
-    {
-      "day": 3,
-      "date": "2026-09-27",
-      "title": "艺术家的一天",
-      "route": "Paris Art Route",
-      "timeline": [
-        {
-          "title": "卢浮宫",
-          "location": "Louvre Museum",
-          "google_map": "https://maps.google.com/?q=Louvre+Museum"
-        },
-        {
-          "title": "奥赛博物馆",
-          "location": "Musée d'Orsay",
-          "google_map": "https://maps.google.com/?q=Musee+d'Orsay"
-        },
-        {
-          "title": "蒙马特",
-          "location": "Montmartre",
-          "google_map": "https://maps.google.com/?q=Montmartre+Paris"
-        }
-      ]
-    },
-
-    {
-      "day": 4,
-      "date": "2026-09-28",
-      "title": "巴黎周边",
-      "route": "Paris Surroundings",
-      "timeline": []
-    },
-
-    {
-      "day": 5,
-      "date": "2026-09-29",
-      "title": "凡尔赛",
-      "route": "Versailles",
-      "timeline": []
-    },
-
-    {
-      "day": 6,
-      "date": "2026-09-30",
-      "title": "巴黎 → 鲁昂 → 埃特勒塔 → 翁弗勒尔",
-      "route": "Paris → Rouen → Étretat → Honfleur",
-      "timeline": [
-        {
-          "time": "09:30",
-          "title": "戴高乐机场取车",
-          "location": "Charles de Gaulle Airport",
-          "google_map": "https://maps.google.com/?q=Charles+de+Gaulle+Airport"
-        },
-        {
-          "time": "15:00",
-          "title": "埃特勒塔",
-          "location": "Étretat",
-          "google_map": "https://maps.google.com/?q=Etretat+France"
-        }
-      ]
-    },
-
-    {
-      "day": 7,
-      "date": "2026-10-01",
-      "title": "奥马哈滩 → 圣米歇尔山",
-      "route": "Omaha Beach → Mont-Saint-Michel",
-      "timeline": []
-    },
+  {
+    "day": 1,
+    "date": "2026-09-25",
+    "title": "抵达巴黎",
+    "route": "CDG Airport → Paris",
+    "timeline": [
+      {
+        "time": "18:15",
+        "title": "抵达巴黎戴高乐机场",
+        "location": "Paris Charles de Gaulle Airport",
+        "google_map": "https://maps.google.com/?q=Paris+Charles+de+Gaulle+Airport",
+        "priority": "fixed"
+      },
+      {
+        "title": "机场 → 巴黎落脚点 · 打车",
+        "location": "Paris"
+      },
+      {
+        "title": "晚餐 · OTTO - MOUFFETARD",
+        "location": "OTTO Mouffetard, Paris",
+        "google_map": "https://maps.google.com/?q=OTTO+Mouffetard+Paris"
+      }
+    ]
+  },
 
   {
-  "day": 8,
-  "date": "2026-10-02",
-  "title": "南特机械岛 → 丰泰夫罗",
-  "route": "Château La Rametière → Nantes → Fontevraud",
-  "timeline": [
-    {
-      "time": "09:00",
-      "title": "从 Château La Rametière 出发",
-      "location": "2 La Rametière, Plomb, France",
-      "google_map": "https://maps.google.com/?q=2+La+Rametiere+Plomb+France"
-    },
-    {
-      "time": "11:15",
-      "title": "抵达南特 · 停车",
-      "location": "Les Machines de l'île, Nantes",
-      "google_map": "https://maps.google.com/?q=Les+Machines+de+l%27ile+Nantes"
-    },
-    {
-      "time": "11:30",
-      "title": "南特午餐",
-      "location": "Île de Nantes",
-      "google_map": "https://maps.google.com/?q=Ile+de+Nantes"
-    },
-    {
-      "time": "12:30",
-      "title": "南特机械岛 · Les Machines de l'île",
-      "location": "Les Machines de l'île",
-      "google_map": "https://maps.google.com/?q=Les+Machines+de+l%27ile+Nantes",
-      "notes": "机械画廊、大象、海洋世界旋转木马等项目根据最终购票场次调整"
-    },
-    {
-      "time": "16:00",
-      "title": "离开南特 · 前往丰泰夫罗",
-      "location": "Nantes → Fontevraud-l'Abbaye",
-      "google_map": "https://maps.google.com/?saddr=Nantes&daddr=Fontevraud-l%27Abbaye"
-    },
-    {
-      "time": "18:00",
-      "title": "抵达 Fontevraud L'Ermitage · 办理入住",
-      "location": "Fontevraud L'Ermitage",
-      "google_map": "https://maps.google.com/?q=Fontevraud+L%27Ermitage"
-    },
-    {
-      "time": "19:30",
-      "title": "酒店晚餐",
-      "location": "Fontevraud L'Ermitage",
-      "google_map": "https://maps.google.com/?q=Fontevraud+L%27Ermitage",
-      "reservation": true,
-           "priority": "fixed"
-    }
-  ]
-},
-    {
-      "day": 9,
-      "date": "2026-10-03",
-      "title": "城堡巡游 → 枫丹白露",
-      "route": "Loire Valley → Fontainebleau",
-      "timeline": []
-    },
+    "day": 2,
+    "date": "2026-09-26",
+    "title": "文青 day",
+    "route": "Paris City Walk",
+    "timeline": [
+      {
+        "time": "08:30",
+        "title": "出门",
+        "location": "Paris"
+      },
+      {
+        "time": "09:00",
+        "title": "圣礼拜堂",
+        "location": "Sainte-Chapelle",
+        "google_map": "https://maps.google.com/?q=Sainte-Chapelle+Paris",
+        "priority": "fixed"
+      },
+      {
+        "title": "莎士比亚书店",
+        "location": "Shakespeare and Company",
+        "google_map": "https://maps.google.com/?q=Shakespeare+and+Company+Paris",
+        "notes": "帆布包"
+      },
+      {
+        "title": "早午餐 · Kozy",
+        "location": "Kozy Paris",
+        "google_map": "https://maps.google.com/?q=Kozy+Paris"
+      },
+      {
+        "title": "Amorino Gelato",
+        "location": "Paris",
+        "notes": "Gelato"
+      },
+      {
+        "title": "卢森堡公园",
+        "location": "Luxembourg Gardens",
+        "google_map": "https://maps.google.com/?q=Luxembourg+Gardens+Paris"
+      },
+      {
+        "title": "Sadaharu Aoki",
+        "location": "Paris",
+        "notes": "甜点"
+      },
+      {
+        "title": "Boulangerie",
+        "location": "Paris",
+        "notes": "可颂"
+      },
+      {
+        "title": "REPETTO",
+        "location": "Paris"
+      },
+      {
+        "title": "乐蓬马歇百货公司",
+        "location": "Le Bon Marché",
+        "google_map": "https://maps.google.com/?q=Le+Bon+Marche+Paris"
+      },
+      {
+        "time": "16:00",
+        "title": "建筑与遗产之城",
+        "location": "Cité de l'Architecture et du Patrimoine",
+        "google_map": "https://maps.google.com/?q=Cite+de+l%27Architecture+et+du+Patrimoine+Paris",
+        "reservation": true,
+        "priority": "fixed"
+      },
+      {
+        "time": "18:00",
+        "title": "巴黎圣母院",
+        "location": "Notre-Dame de Paris",
+        "google_map": "https://maps.google.com/?q=Notre+Dame+de+Paris",
+        "notes": "原行程备注：提前 2 天预约",
+        "priority": "fixed"
+      },
+      {
+        "time": "19:30",
+        "title": "巴黎圣母院登塔",
+        "location": "Notre-Dame de Paris",
+        "google_map": "https://maps.google.com/?q=Notre+Dame+de+Paris",
+        "priority": "fixed"
+      }
+    ]
+  },
 
-    {
-      "day": 10,
-      "date": "2026-10-04",
-      "title": "枫丹白露 → CDG机场",
-      "route": "Fontainebleau → Charles de Gaulle Airport",
-      "timeline": [
-        {
-          "time": "15:00",
-          "title": "机场还车",
-          "location": "Paris Charles de Gaulle Airport",
-          "google_map": "https://maps.google.com/?q=Charles+de+Gaulle+Airport"
-        }
-      ]
-    }
-  ],
+  {
+    "day": 3,
+    "date": "2026-09-27",
+    "title": "艺术家的一天",
+    "route": "Louvre → Orangerie → Orsay → Montmartre",
+    "timeline": [
+      {
+        "time": "08:30",
+        "title": "出门",
+        "location": "Paris"
+      },
+      {
+        "time": "09:00–12:30",
+        "title": "卢浮宫",
+        "location": "Louvre Museum",
+        "google_map": "https://maps.google.com/?q=Louvre+Museum+Paris",
+        "reservation": true,
+        "priority": "fixed"
+      },
+      {
+        "title": "午餐 · Le Petit Bouillon Pharamond",
+        "location": "Le Petit Bouillon Pharamond",
+        "google_map": "https://maps.google.com/?q=Le+Petit+Bouillon+Pharamond+Paris"
+      },
+      {
+        "title": "Stohrer",
+        "location": "Stohrer Paris",
+        "google_map": "https://maps.google.com/?q=Stohrer+Paris",
+        "notes": "圣多诺黑 · 闪电泡芙 · 柠檬乳酪蛋糕 · Flan"
+      },
+      {
+        "title": "薇薇安拱廊街",
+        "location": "Galerie Vivienne",
+        "google_map": "https://maps.google.com/?q=Galerie+Vivienne+Paris"
+      },
+      {
+        "title": "Happy Café",
+        "location": "Paris",
+        "notes": "可丽饼"
+      },
+      {
+        "time": "15:00",
+        "title": "橘园美术馆",
+        "location": "Musée de l'Orangerie",
+        "google_map": "https://maps.google.com/?q=Musee+de+l%27Orangerie+Paris",
+        "priority": "fixed"
+      },
+      {
+        "time": "16:00",
+        "title": "奥赛博物馆",
+        "location": "Musée d'Orsay",
+        "google_map": "https://maps.google.com/?q=Musee+d%27Orsay+Paris",
+        "reservation": true,
+        "priority": "fixed"
+      },
+      {
+        "title": "Arnaud Larher",
+        "location": "Paris",
+        "notes": "可可慕斯"
+      },
+      {
+        "title": "日落 & 晚饭 · 蒙马特高地",
+        "location": "Montmartre",
+        "google_map": "https://maps.google.com/?q=Montmartre+Paris"
+      },
+      {
+        "title": "塞纳河游船 · 会议码头",
+        "location": "Port de la Conférence",
+        "google_map": "https://maps.google.com/?q=Port+de+la+Conference+Paris"
+      }
+    ]
+  },
+
+  {
+    "day": 4,
+    "date": "2026-09-28",
+    "title": "看得出她是公主 day",
+    "route": "Paris → Disneyland Paris → Paris",
+    "timeline": [
+      {
+        "time": "09:00",
+        "title": "出门 · 前往巴黎迪士尼",
+        "location": "Disneyland Paris",
+        "google_map": "https://maps.google.com/?q=Disneyland+Paris"
+      },
+      {
+        "title": "巴黎迪士尼",
+        "location": "Disneyland Paris",
+        "google_map": "https://maps.google.com/?q=Disneyland+Paris",
+        "notes": "必买：香槟杯"
+      }
+    ]
+  },
+
+  {
+    "day": 5,
+    "date": "2026-09-29",
+    "title": "姐就是女王 day",
+    "route": "Paris → Versailles → Paris",
+    "timeline": [
+      {
+        "time": "08:30",
+        "title": "出门 · 前往凡尔赛",
+        "location": "Paris"
+      },
+      {
+        "time": "10:00",
+        "title": "凡尔赛宫",
+        "location": "Palace of Versailles",
+        "google_map": "https://maps.google.com/?q=Palace+of+Versailles",
+        "priority": "fixed"
+      },
+      {
+        "title": "荣军院",
+        "location": "Hôtel des Invalides",
+        "google_map": "https://maps.google.com/?q=Hotel+des+Invalides+Paris"
+      },
+      {
+        "title": "凯旋门",
+        "location": "Arc de Triomphe",
+        "google_map": "https://maps.google.com/?q=Arc+de+Triomphe+Paris"
+      },
+      {
+        "title": "Tennis Pro",
+        "location": "Paris"
+      },
+      {
+        "title": "Yann Couvreur",
+        "location": "Paris",
+        "google_map": "https://maps.google.com/?q=Yann+Couvreur+Paris"
+      },
+      {
+        "title": "逛街",
+        "location": "Paris"
+      },
+      {
+        "title": "老佛爷甜点区",
+        "location": "Galeries Lafayette Paris Haussmann",
+        "google_map": "https://maps.google.com/?q=Galeries+Lafayette+Paris+Haussmann"
+      },
+      {
+        "time": "21:00",
+        "title": "埃菲尔铁塔点灯",
+        "location": "Eiffel Tower",
+        "google_map": "https://maps.google.com/?q=Eiffel+Tower+Paris",
+        "priority": "fixed"
+      }
+    ]
+  },
+
+  {
+    "day": 6,
+    "date": "2026-09-30",
+    "title": "巴黎 → 鲁昂 → 埃特勒塔 → 翁弗勒尔",
+    "route": "Paris CDG → Rouen → Étretat → Tourgéville",
+    "timeline": [
+      {
+        "time": "09:30",
+        "title": "戴高乐机场取车",
+        "location": "Paris Charles de Gaulle Airport",
+        "google_map": "https://maps.google.com/?q=Paris+Charles+de+Gaulle+Airport",
+        "priority": "fixed"
+      },
+      {
+        "title": "前往鲁昂",
+        "location": "Rouen",
+        "google_map": "https://maps.google.com/?q=Rouen+France",
+        "notes": "原行程预计驾驶约 2 小时"
+      },
+      {
+        "title": "Maison Vatelier",
+        "location": "Rouen",
+        "notes": "法甜"
+      },
+      {
+        "time": "13:30",
+        "title": "午餐 · Brasserie Chéri",
+        "location": "Rouen",
+        "google_map": "https://maps.google.com/?q=Brasserie+Cheri+Rouen",
+        "reservation": true,
+        "priority": "fixed"
+      },
+      {
+        "title": "鲁昂 → 埃特勒塔白崖",
+        "location": "Étretat",
+        "google_map": "https://maps.google.com/?q=Etretat+France",
+        "notes": "原行程预计驾驶约 1 小时 11 分钟"
+      },
+      {
+        "title": "埃特勒塔白崖 · 象鼻山",
+        "location": "Étretat",
+        "google_map": "https://maps.google.com/?q=Etretat+Cliffs+France",
+        "notes": "海边爬坡 + 观光约 2.5 小时"
+      },
+      {
+        "time": "17:30",
+        "title": "离开埃特勒塔白崖",
+        "location": "Étretat"
+      },
+      {
+        "time": "18:40",
+        "title": "抵达酒店",
+        "location": "图尔热维尔狮子庄园酒店",
+        "notes": "住宿"
+      },
+      {
+        "title": "多维尔 · 海滨散步",
+        "location": "Deauville",
+        "google_map": "https://maps.google.com/?q=Deauville+France"
+      },
+      {
+        "time": "19:30",
+        "title": "晚餐 · Le Drakkar / Napoletano",
+        "location": "Deauville",
+        "reservation": true,
+        "priority": "fixed"
+      }
+    ]
+  },
+
+  {
+    "day": 7,
+    "date": "2026-10-01",
+    "title": "奥马哈滩 → 圣米歇尔山 → 拉梅蒂埃",
+    "route": "Tourgéville → Omaha Beach → Mont-Saint-Michel → Château La Rametière",
+    "timeline": [
+      {
+        "title": "酒店出发 · 前往奥马哈滩",
+        "location": "Omaha Beach",
+        "google_map": "https://maps.google.com/?q=Omaha+Beach+Normandy",
+        "notes": "原行程预计驾驶约 1 小时 7 分钟"
+      },
+      {
+        "title": "奥马哈滩 · 诺曼底登陆海岸",
+        "location": "Omaha Beach",
+        "google_map": "https://maps.google.com/?q=Omaha+Beach+Normandy"
+      },
+      {
+        "title": "前往圣米歇尔山",
+        "location": "Mont-Saint-Michel",
+        "google_map": "https://maps.google.com/?q=Mont+Saint+Michel+France",
+        "notes": "原行程预计驾驶约 1.5 小时"
+      },
+      {
+        "time": "15:00",
+        "title": "进入圣米歇尔山停车场",
+        "location": "Mont-Saint-Michel",
+        "google_map": "https://maps.google.com/?q=Mont+Saint+Michel+Parking"
+      },
+      {
+        "time": "16:00–17:00",
+        "title": "圣米歇尔山修道院",
+        "location": "Abbaye du Mont-Saint-Michel",
+        "google_map": "https://maps.google.com/?q=Abbaye+du+Mont+Saint+Michel",
+        "notes": "伴手礼：黄油饼干",
+        "priority": "fixed"
+      },
+      {
+        "title": "前往 Château La Rametière",
+        "location": "2 La Rametière, Plomb, France",
+        "google_map": "https://maps.google.com/?q=2+La+Rametiere+Plomb+France",
+        "notes": "原行程预计驾驶约 30 分钟"
+      }
+    ]
+  },
+
+  {
+    "day": 8,
+    "date": "2026-10-02",
+    "title": "南特机械岛 → 丰泰夫罗",
+    "route": "Château La Rametière → Nantes → Fontevraud",
+    "timeline": [
+      {
+        "time": "09:00",
+        "title": "从 Château La Rametière 出发",
+        "location": "2 La Rametière, Plomb, France",
+        "google_map": "https://maps.google.com/?q=2+La+Rametiere+Plomb+France"
+      },
+      {
+        "time": "11:15",
+        "title": "抵达南特 · 停车",
+        "location": "Les Machines de l'île, Nantes",
+        "google_map": "https://maps.google.com/?q=Les+Machines+de+l%27ile+Nantes"
+      },
+      {
+        "time": "11:30",
+        "title": "南特午餐",
+        "location": "Île de Nantes",
+        "google_map": "https://maps.google.com/?q=Ile+de+Nantes"
+      },
+      {
+        "time": "12:30",
+        "title": "南特机械岛 · Les Machines de l'île",
+        "location": "Les Machines de l'île",
+        "google_map": "https://maps.google.com/?q=Les+Machines+de+l%27ile+Nantes",
+        "notes": "机械画廊、大象、海洋世界旋转木马等项目根据最终购票场次调整"
+      },
+      {
+        "time": "16:00",
+        "title": "离开南特 · 前往丰泰夫罗",
+        "location": "Nantes → Fontevraud-l'Abbaye",
+        "google_map": "https://maps.google.com/?saddr=Nantes&daddr=Fontevraud-l%27Abbaye"
+      },
+      {
+        "time": "18:00",
+        "title": "抵达 Fontevraud L'Ermitage · 办理入住",
+        "location": "Fontevraud L'Ermitage",
+        "google_map": "https://maps.google.com/?q=Fontevraud+L%27Ermitage"
+      },
+      {
+        "time": "19:30",
+        "title": "酒店晚餐",
+        "location": "Fontevraud L'Ermitage",
+        "google_map": "https://maps.google.com/?q=Fontevraud+L%27Ermitage",
+        "reservation": true,
+        "priority": "fixed"
+      }
+    ]
+  },
+
+  {
+    "day": 9,
+    "date": "2026-10-03",
+    "title": "卢瓦尔城堡巡游 → 枫丹白露",
+    "route": "Fontevraud → Amboise → Chambord → Orléans → Fontainebleau",
+    "timeline": [
+      {
+        "title": "丰泰夫罗 → 安布瓦城堡",
+        "location": "Château Royal d'Amboise",
+        "google_map": "https://maps.google.com/?q=Chateau+Royal+d%27Amboise",
+        "notes": "原行程预计驾驶约 1 小时 30 分钟"
+      },
+      {
+        "title": "安布瓦城堡",
+        "location": "Château Royal d'Amboise",
+        "google_map": "https://maps.google.com/?q=Chateau+Royal+d%27Amboise",
+        "notes": "原行程：提前网上订票，暂未预定"
+      },
+      {
+        "title": "安布瓦 → 香波尔城堡",
+        "location": "Château de Chambord",
+        "google_map": "https://maps.google.com/?q=Chateau+de+Chambord",
+        "notes": "原行程预计驾驶约 1 小时"
+      },
+      {
+        "title": "香波尔城堡",
+        "location": "Château de Chambord",
+        "google_map": "https://maps.google.com/?q=Chateau+de+Chambord"
+      },
+      {
+        "title": "香波尔 → 奥尔良",
+        "location": "Orléans",
+        "google_map": "https://maps.google.com/?q=Orleans+France",
+        "notes": "原行程预计驾驶约 1 小时"
+      },
+      {
+        "title": "奥尔良 → 枫丹白露",
+        "location": "Fontainebleau",
+        "google_map": "https://maps.google.com/?q=Fontainebleau+France",
+        "notes": "原行程预计驾驶约 1.5 小时"
+      },
+      {
+        "title": "入住枫丹白露酒店",
+        "location": "枫丹白露城堡乡间别墅美居酒店",
+        "notes": "入住"
+      }
+    ]
+  },
+
+  {
+    "day": 10,
+    "date": "2026-10-04",
+    "title": "枫丹白露 → CDG机场",
+    "route": "Fontainebleau → Paris Charles de Gaulle Airport",
+    "timeline": [
+      {
+        "time": "09:30",
+        "title": "枫丹白露宫观光",
+        "location": "Château de Fontainebleau",
+        "google_map": "https://maps.google.com/?q=Chateau+de+Fontainebleau",
+        "reservation": true,
+        "priority": "fixed"
+      },
+      {
+        "time": "15:00",
+        "title": "前往机场 · 还车",
+        "location": "Paris Charles de Gaulle Airport",
+        "google_map": "https://maps.google.com/?q=Paris+Charles+de+Gaulle+Airport",
+        "priority": "fixed"
+      },
+      {
+        "time": "19:00",
+        "title": "CDG 起飞 · 返程",
+        "location": "Paris Charles de Gaulle Airport",
+        "google_map": "https://maps.google.com/?q=Paris+Charles+de+Gaulle+Airport",
+        "priority": "fixed"
+      }
+    ]
+  }
+],
 
   "privacy_excluded": [
     "passport_number",
