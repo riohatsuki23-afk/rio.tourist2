@@ -222,68 +222,31 @@ function JourneySection() {
               {isOpen && (
                 <div className="day-detail">
                   {day.timeline?.length > 0 ? (
-                  day.timeline.map((item, index) => {
-  const isReserved = item.reservation === true;
-  const isFixed = item.priority === "fixed";
-  const isImportant = isReserved || isFixed;
+                    day.timeline.map((item, index) => (
+                      <div className="timeline-row" key={index}>
+                        <div className="timeline-axis">
+                          <span />
+                        </div>
 
-  return (
-    <div
-      className={`timeline-row ${
-        isImportant ? "timeline-important" : ""
-      }`}
-      key={index}
-    >
-      <div className="timeline-axis">
-        <span />
-      </div>
+                        <div className="timeline-copy">
+                          {item.time && <time>{item.time}</time>}
 
-      <div className="timeline-copy">
-        <div className="timeline-meta">
-          {item.time && <time>{item.time}</time>}
+                          <h4>{item.title}</h4>
 
-          {isReserved && (
-            <span className="status-badge reserved-badge">
-              RESERVED · 已预约
-            </span>
-          )}
+                          {item.location && <p>{item.location}</p>}
 
-          {!isReserved && isFixed && (
-            <span className="status-badge fixed-badge">
-              FIXED · 固定时间
-            </span>
-          )}
-        </div>
-
-        <h4>{item.title}</h4>
-
-        {item.location && (
-          <p className="timeline-location">
-            {item.location}
-          </p>
-        )}
-
-        {item.notes && (
-          <p className="timeline-note">
-            {item.notes}
-          </p>
-        )}
-
-        {item.google_map && (
-          <a
-            className="navigate-button"
-            href={item.google_map}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>NAVIGATE</span>
-            <strong>导航 →</strong>
-          </a>
-        )}
-      </div>
-    </div>
-  );
-})
+                          {item.google_map && (
+                            <a
+                              href={item.google_map}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              GOOGLE MAPS ↗
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    ))
                   ) : (
                     <div className="empty-state">
                       详细行程待补充
