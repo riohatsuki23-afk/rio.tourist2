@@ -1,1 +1,720 @@
-body{margin:0;font-family:system-ui;background:#faf8f3}.page{max-width:600px;margin:auto;padding:20px}.card{background:white;border-radius:20px;padding:18px;margin:12px 0}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: #f1f0eb;
+  color: #171713;
+  font-family:
+    Inter,
+    "Noto Sans SC",
+    "PingFang SC",
+    "Microsoft YaHei",
+    Arial,
+    sans-serif;
+}
+
+button,
+a {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  border: 0;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 26px 16px 100px;
+}
+
+.travel-app {
+  width: min(100%, 620px);
+  margin: 0 auto;
+  overflow: hidden;
+  background: #faf9f5;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.08);
+}
+
+/* HERO */
+
+.hero {
+  min-height: 400px;
+  padding: 25px 26px 24px;
+  display: flex;
+  flex-direction: column;
+  color: #f8f7f1;
+  background:
+    linear-gradient(
+      180deg,
+      #56614f 0%,
+      #374235 52%,
+      #273126 100%
+    );
+}
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  opacity: 0.78;
+}
+
+.hero-content {
+  margin-top: 82px;
+}
+
+.hero-kicker {
+  margin-bottom: 11px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.hero h1 {
+  margin: 0;
+  white-space: nowrap;
+  font-size: clamp(36px, 7.4vw, 52px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -2.6px;
+}
+
+.hero-content p {
+  margin: 13px 0 0;
+  font-size: 14px;
+  opacity: 0.76;
+}
+
+.trip-meta {
+  margin-top: auto;
+  padding-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.27);
+}
+
+.trip-meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.trip-meta span {
+  font-size: 8px;
+  letter-spacing: 1px;
+  opacity: 0.6;
+}
+
+.trip-meta strong {
+  font-size: 11px;
+}
+
+/* COUNTDOWN */
+
+.countdown {
+  margin: 0 16px;
+  min-height: 130px;
+  padding: 27px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: #182219;
+  color: white;
+}
+
+.section-label {
+  color: #948872;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.light-label {
+  color: #c4c9bf;
+}
+
+.countdown-main {
+  margin-top: 7px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.countdown-main strong {
+  font-size: 46px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.countdown-main span {
+  font-size: 8px;
+  letter-spacing: 1px;
+  opacity: 0.55;
+}
+
+.countdown-clock {
+  padding-bottom: 5px;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.65;
+}
+
+/* COMMON */
+
+.content-section {
+  padding: 60px 22px 10px;
+  scroll-margin-top: 20px;
+}
+
+.main-heading {
+  margin-bottom: 34px;
+  display: grid;
+  grid-template-columns: 38px 1fr;
+}
+
+.heading-number {
+  padding-top: 1px;
+  color: #aaa294;
+  font-size: 9px;
+}
+
+.main-heading h2 {
+  margin: 6px 0 0;
+  font-size: 30px;
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -1.4px;
+}
+
+/* FLIGHTS */
+
+.flight-group + .flight-group {
+  margin-top: 50px;
+}
+
+.group-heading {
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.group-heading h3 {
+  margin: 6px 0 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.group-heading > span {
+  color: #aaa294;
+  font-size: 7px;
+  letter-spacing: 1px;
+}
+
+.horizontal-scroll {
+  display: flex;
+  gap: 10px;
+  margin-right: -22px;
+  padding-right: 22px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.flight-card {
+  flex: 0 0 94%;
+  min-height: 235px;
+  padding: 19px;
+  display: flex;
+  flex-direction: column;
+  background: #eae7df;
+  scroll-snap-align: start;
+}
+
+.flight-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+}
+
+.flight-top small {
+  display: block;
+  margin-top: 5px;
+  color: #777269;
+  font-size: 7px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+}
+
+.flight-route {
+  flex: 1;
+  margin: 30px 0 22px;
+  display: grid;
+  grid-template-columns: 1fr 76px 1fr;
+  align-items: center;
+}
+
+.flight-route > div:not(.flight-path) {
+  display: flex;
+  flex-direction: column;
+}
+
+.flight-destination {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.airport-code {
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -1.2px;
+}
+
+.flight-route span {
+  margin-top: 6px;
+  color: #706c64;
+  font-size: 9px;
+}
+
+.flight-route time {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.flight-path {
+  display: flex;
+  align-items: center;
+}
+
+.flight-path i {
+  flex: 1;
+  height: 1px;
+  background: #aaa69d;
+}
+
+.flight-path span {
+  margin: 0 5px;
+  color: #171713;
+  font-size: 11px;
+}
+
+.flight-bottom {
+  padding-top: 13px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  gap: 8px;
+  border-top: 1px solid #d1cdc3;
+  color: #777269;
+  font-size: 8px;
+}
+
+.flight-bottom div {
+  display: flex;
+  gap: 8px;
+}
+
+.flight-bottom b {
+  color: #222;
+}
+
+.flight-bottom-right {
+  justify-content: flex-end;
+}
+
+/* JOURNEY */
+
+.journey-section {
+  padding-top: 75px;
+}
+
+.journey-list {
+  border-top: 1px solid #d5d2ca;
+}
+
+.day {
+  border-bottom: 1px solid #d5d2ca;
+}
+
+.day-button {
+  width: 100%;
+  padding: 19px 0;
+  display: grid;
+  grid-template-columns: 54px 1fr 25px;
+  gap: 10px;
+  align-items: start;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.day-index span {
+  display: block;
+  color: #969187;
+  font-size: 7px;
+  letter-spacing: 1px;
+}
+
+.day-index strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.day-copy time {
+  display: block;
+  margin-bottom: 5px;
+  color: #969187;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.day-copy h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.day-copy p {
+  margin: 6px 0 0;
+  color: #817d74;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.day-toggle {
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.day-detail {
+  margin-left: 64px;
+  padding: 0 0 25px;
+}
+
+.timeline-row {
+  min-height: 90px;
+  display: grid;
+  grid-template-columns: 24px 1fr;
+}
+
+.timeline-axis {
+  position: relative;
+}
+
+.timeline-axis::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  bottom: -3px;
+  left: 4px;
+  border-left: 1px solid #ccc8be;
+}
+
+.timeline-row:last-child .timeline-axis::after {
+  display: none;
+}
+
+.timeline-axis span {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border: 1px solid #596056;
+  border-radius: 50%;
+  background: #faf9f5;
+}
+
+.timeline-copy {
+  padding-bottom: 24px;
+}
+
+.timeline-copy time {
+  color: #77736a;
+  font-size: 9px;
+}
+
+.timeline-copy h4 {
+  margin: 4px 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.timeline-copy p {
+  margin: 0;
+  color: #77736a;
+  font-size: 10px;
+}
+
+.timeline-copy a,
+.stay-copy a {
+  display: inline-block;
+  margin-top: 9px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #7d796f;
+  font-size: 8px;
+  letter-spacing: 0.7px;
+  text-decoration: none;
+}
+
+.empty-state {
+  padding: 2px 0 18px;
+  color: #99948a;
+  font-size: 11px;
+}
+
+/* STAY */
+
+.stay-list {
+  border-top: 1px solid #d5d2ca;
+}
+
+.stay-card {
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  border-bottom: 1px solid #d5d2ca;
+}
+
+.stay-number {
+  color: #99948a;
+  font-size: 9px;
+}
+
+.stay-copy > span {
+  color: #918c82;
+  font-size: 8px;
+  letter-spacing: 0.6px;
+}
+
+.stay-copy h3 {
+  margin: 6px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.stay-copy p,
+.stay-copy address {
+  margin: 0;
+  color: #77736a;
+  font-size: 10px;
+  font-style: normal;
+}
+
+/* ROAD */
+
+.road-section {
+  padding-bottom: 60px;
+}
+
+.rental-card {
+  padding: 23px 20px;
+  display: grid;
+  grid-template-columns: 1fr 36px 1fr;
+  align-items: center;
+  background: #30382f;
+  color: white;
+}
+
+.rental-card > div:not(.rental-arrow) {
+  display: flex;
+  flex-direction: column;
+}
+
+.rental-card span {
+  margin-bottom: 7px;
+  color: #b9beb5;
+  font-size: 7px;
+  letter-spacing: 1.3px;
+}
+
+.rental-card strong {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.rental-card time {
+  margin-top: 5px;
+  font-size: 21px;
+}
+
+.rental-card p {
+  margin: 7px 0 0;
+  font-size: 8px;
+  line-height: 1.5;
+  opacity: 0.6;
+}
+
+.rental-return {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.rental-arrow {
+  text-align: center;
+  opacity: 0.5;
+}
+
+.road-tips {
+  margin-top: 16px;
+}
+
+.road-tips details {
+  border-bottom: 1px solid #d5d2ca;
+}
+
+.road-tips summary {
+  padding: 17px 0;
+  display: grid;
+  grid-template-columns: 40px 1fr 20px;
+  align-items: center;
+  list-style: none;
+  cursor: pointer;
+}
+
+.road-tips summary::-webkit-details-marker {
+  display: none;
+}
+
+.road-tips summary span {
+  color: #99948a;
+  font-size: 8px;
+}
+
+.road-tips summary strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.road-tips summary b {
+  text-align: right;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.road-tips details[open] summary b {
+  transform: rotate(45deg);
+}
+
+.road-tips details p {
+  margin: 0;
+  padding: 0 20px 20px 40px;
+  color: #706c64;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* NAV */
+
+.bottom-navigation {
+  position: fixed;
+  z-index: 50;
+  left: 50%;
+  bottom: 14px;
+  width: min(calc(100% - 28px), 580px);
+  transform: translateX(-50%);
+  padding:
+    11px 10px
+    max(11px, env(safe-area-inset-bottom));
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: rgba(248, 247, 242, 0.94);
+  border: 1px solid rgba(205, 202, 193, 0.9);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.bottom-navigation a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  text-decoration: none;
+}
+
+.bottom-navigation span {
+  color: #99948a;
+  font-size: 7px;
+}
+
+.bottom-navigation strong {
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  .page {
+    padding: 0 0 90px;
+  }
+
+  .travel-app {
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .hero {
+    min-height: 390px;
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 11vw, 47px);
+    letter-spacing: -2.2px;
+  }
+
+  .countdown {
+    margin: 0 14px;
+  }
+
+  .content-section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .horizontal-scroll {
+    margin-right: -18px;
+    padding-right: 18px;
+  }
+
+  .flight-card {
+    flex-basis: 93%;
+  }
+
+  .flight-route {
+    grid-template-columns: 1fr 62px 1fr;
+  }
+
+  .airport-code {
+    font-size: 27px;
+  }
+
+  .bottom-navigation {
+    bottom: 8px;
+  }
+}
