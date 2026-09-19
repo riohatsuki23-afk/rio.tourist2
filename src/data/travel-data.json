@@ -534,6 +534,10 @@
     "date": "2026-09-30",
     "title": "巴黎 → 鲁昂 → 埃特勒塔 → 翁弗勒尔",
     "route": "Paris CDG → Rouen → Étretat → Tourgéville",
+"map": {
+  "image": "day-06-route",
+  "label": "PARIS CDG → ROUEN → ÉTRETAT → TOURGÉVILLE"
+},
     "timeline": [
       {
         "time": "09:30",
