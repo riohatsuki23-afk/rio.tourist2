@@ -1196,3 +1196,48 @@ button {
   line-height: 1.4;
   text-align: right;
 }
+
+/* =========================================
+   V1.8 — TODAY PROGRESS
+   ========================================= */
+
+.today-progress {
+  margin: 18px 0;
+}
+
+.today-progress-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.today-progress-meta span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  opacity: 0.58;
+}
+
+.today-progress-meta strong {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.today-progress-track {
+  width: 100%;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.today-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: currentColor;
+  transition: width 0.35s ease;
+}

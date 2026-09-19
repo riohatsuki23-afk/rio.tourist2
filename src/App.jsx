@@ -18,7 +18,7 @@ function formatDate(dateString) {
 const PARIS_TIME_ZONE = "Europe/Paris";
 
 const DEV_PREVIEW = {
-  enabled: false,
+  enabled:false,
   date: "2026-10-02",
   time: "19:31",
 };
@@ -172,10 +172,16 @@ function getDayProgress(day, parisTime) {
     }
   }
 
-  return {
-    current,
-    next,
-  };
+const completed = current
+  ? timedItems.filter((entry) => entry.minutes < current.minutes).length
+  : 0;
+
+return {
+  current,
+  next,
+  completed,
+  total: timedItems.length,
+};
 }
 
 function Countdown({ targetDate }) {
@@ -397,6 +403,26 @@ function JourneySection() {
     </div>
 
     <h3>{today.title}</h3>
+
+{progress.total > 0 && (
+  <div className="today-progress">
+    <div className="today-progress-meta">
+      <span>TODAY PROGRESS</span>
+      <strong>
+        {progress.completed} / {progress.total} COMPLETED
+      </strong>
+    </div>
+
+    <div className="today-progress-track">
+      <div
+        className="today-progress-fill"
+        style={{
+          width: `${(progress.completed / progress.total) * 100}%`,
+        }}
+      />
+    </div>
+  </div>
+)}
 
     {nextIsImminent && (
       <div className="imminent-alert">
