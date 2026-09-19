@@ -1241,3 +1241,261 @@ button {
   background: currentColor;
   transition: width 0.35s ease;
 }
+
+/* ========================================
+   V1.9 · DAY ROUTE MAP
+   ======================================== */
+
+.day-route-map {
+  margin: 0 0 34px;
+  padding: 0;
+}
+
+.route-map-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 14px;
+}
+
+.route-map-heading > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.route-map-heading span,
+.route-map-heading time {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: #8d8a80;
+}
+
+.route-map-heading strong {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.route-map-canvas {
+  position: relative;
+  height: 390px;
+  overflow: hidden;
+  border: 1px solid rgba(36, 52, 39, 0.18);
+  background:
+    radial-gradient(
+      circle at 18% 22%,
+      rgba(36, 52, 39, 0.045) 0,
+      rgba(36, 52, 39, 0) 26%
+    ),
+    radial-gradient(
+      circle at 74% 66%,
+      rgba(36, 52, 39, 0.055) 0,
+      rgba(36, 52, 39, 0) 30%
+    ),
+    #f1efe8;
+}
+
+/* Route lines */
+
+.route-map-road {
+  position: absolute;
+  z-index: 1;
+  height: 1px;
+  border-top: 1px dashed rgba(36, 52, 39, 0.55);
+  transform-origin: left center;
+}
+
+.route-road-one {
+  width: 42%;
+  left: 21%;
+  top: 31%;
+  transform: rotate(24deg);
+}
+
+.route-road-two {
+  width: 38%;
+  left: 52%;
+  top: 57%;
+  transform: rotate(29deg);
+}
+
+/* Places */
+
+.route-place {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.route-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  border-radius: 50%;
+  background: #263528;
+  color: #f5f1e7;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  box-shadow: 0 0 0 5px rgba(241, 239, 232, 0.9);
+}
+
+.route-place small {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  color: #8d8a80;
+}
+
+.route-place strong {
+  display: block;
+  font-size: 14px;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+}
+
+.route-place p {
+  margin: 4px 0 0;
+  font-size: 10px;
+  color: #77756e;
+}
+
+.route-place-start {
+  left: 8%;
+  top: 12%;
+}
+
+.route-place-nantes {
+  left: 40%;
+  top: 42%;
+}
+
+.route-place-end {
+  right: 7%;
+  bottom: 13%;
+}
+
+/* Nantes local stops */
+
+.route-city-stops {
+  position: absolute;
+  top: 50px;
+  left: 14px;
+  display: flex;
+  gap: 5px;
+}
+
+.route-city-stops i {
+  width: 4px;
+  height: 4px;
+  border: 1px solid #263528;
+  border-radius: 50%;
+  background: #f1efe8;
+}
+
+/* Driving labels */
+
+.route-drive {
+  position: absolute;
+  z-index: 2;
+  padding: 3px 6px;
+  background: #f1efe8;
+  color: #8d8a80;
+  font-size: 7px;
+  letter-spacing: 0.18em;
+}
+
+.route-drive-one {
+  left: 35%;
+  top: 28%;
+  transform: rotate(24deg);
+}
+
+.route-drive-two {
+  left: 67%;
+  top: 60%;
+  transform: rotate(29deg);
+}
+
+/* Geographic caption */
+
+.route-map-caption {
+  position: absolute;
+  left: 18px;
+  bottom: 15px;
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  color: #aaa69b;
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+  .day-route-map {
+    margin-bottom: 28px;
+  }
+
+  .route-map-heading {
+    gap: 12px;
+  }
+
+  .route-map-heading strong {
+    font-size: 10px;
+  }
+
+  .route-map-canvas {
+    height: 340px;
+  }
+
+  .route-place-start {
+    left: 6%;
+    top: 11%;
+  }
+
+  .route-place-nantes {
+    left: 35%;
+    top: 42%;
+  }
+
+  .route-place-end {
+    right: 5%;
+    bottom: 13%;
+  }
+
+  .route-place strong {
+    font-size: 12px;
+  }
+
+  .route-place p {
+    font-size: 9px;
+  }
+
+  .route-number {
+    width: 27px;
+    height: 27px;
+    flex-basis: 27px;
+  }
+}
+/* V1.9 · Illustrated route map */
+
+.route-map-image-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(36, 52, 39, 0.18);
+  background: #f1efe8;
+}
+
+.route-map-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

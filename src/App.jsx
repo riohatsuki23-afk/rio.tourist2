@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import travelData from "./data/travel-data.json";
+import day08RouteMap from "./assets/maps/day-08-route.png";
 import "./styles/app.css";
 
 function formatDate(dateString) {
@@ -353,6 +354,31 @@ function SectionHeading({ number, label, title }) {
   );
 }
 
+function DayRouteMap({ day }) {
+  if (day.day !== 8) return null;
+
+  return (
+    <div className="day-route-map">
+      <div className="route-map-heading">
+        <div>
+          <span>DAY ROUTE</span>
+          <strong>CHATEAU → NANTES → FONTEVRAUD</strong>
+        </div>
+
+        <time>OCT 02</time>
+      </div>
+
+      <div className="route-map-image-frame">
+        <img
+          className="route-map-image"
+          src={day08RouteMap}
+          alt="Day 08 route from Chateau La Rametiere through Nantes to Fontevraud"
+        />
+      </div>
+    </div>
+  );
+}
+
 function JourneySection() {
   const tripStatus = getTripStatus();
   const today = tripStatus.today;
@@ -526,10 +552,11 @@ function JourneySection() {
 
                 <span className="day-toggle">{isOpen ? "−" : "+"}</span>
               </button>
+{isOpen && (
+  <div className="day-detail">
+    <DayRouteMap day={day} />
 
-              {isOpen && (
-                <div className="day-detail">
-                  {day.timeline?.length > 0 ? (
+    {day.timeline?.length > 0 ? (
                   day.timeline.map((item, index) => {
   const isReserved = item.reservation === true;
   const isFixed = item.priority === "fixed";
