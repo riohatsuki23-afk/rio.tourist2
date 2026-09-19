@@ -366,6 +366,17 @@ function JourneySection() {
       ? formatMinutesUntil(minutesUntilNext)
       : "";
 
+  const nextIsImportant =
+    progress.next &&
+    (progress.next.item.reservation === true ||
+      progress.next.item.priority === "fixed");
+
+  const nextIsImminent =
+    nextIsImportant &&
+    minutesUntilNext !== null &&
+    minutesUntilNext > 0 &&
+    minutesUntilNext <= 30;
+
   const [openDay, setOpenDay] = useState(
     today ? today.day : null
   );
@@ -386,6 +397,13 @@ function JourneySection() {
     </div>
 
     <h3>{today.title}</h3>
+
+    {nextIsImminent && (
+      <div className="imminent-alert">
+        <span>UPCOMING</span>
+        <strong>预约行程即将开始 · 请准备出发</strong>
+      </div>
+    )}
 
     {progress.current && (
       <div className="live-item now-item">

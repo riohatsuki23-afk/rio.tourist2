@@ -1166,3 +1166,33 @@ button {
 .live-navigate-button:active {
   transform: scale(0.985);
 }
+
+
+/* =========================================
+   V1.7 - IMMINENT ITINERARY ALERT
+   ========================================= */
+
+.imminent-alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 14px 0 4px;
+  padding: 11px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.imminent-alert span {
+  flex: 0 0 auto;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  opacity: 0.65;
+}
+
+.imminent-alert strong {
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: right;
+}
