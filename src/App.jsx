@@ -415,6 +415,18 @@ function JourneySection() {
 
       <strong>{progress.next.item.title}</strong>
 
+      {progress.next.item.google_map && (
+        <a
+          className="live-navigate-button"
+          href={progress.next.item.google_map}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>NAVIGATE</span>
+          <strong>导航 →</strong>
+        </a>
+      )}
+
       {(progress.next.item.reservation === true ||
         progress.next.item.priority === "fixed") && (
         <div className="live-status-row">
