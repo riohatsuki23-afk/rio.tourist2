@@ -599,12 +599,16 @@
     ]
   },
 
-  {
-    "day": 7,
-    "date": "2026-10-01",
-    "title": "奥马哈滩 → 圣米歇尔山 → 拉梅蒂埃",
-    "route": "Tourgéville → Omaha Beach → Mont-Saint-Michel → Château La Rametière",
-    "timeline": [
+{
+  "day": 7,
+  "date": "2026-10-01",
+  "title": "奥马哈滩 → 圣米歇尔山 → 拉梅蒂埃",
+  "route": "Tourgéville → Omaha Beach → Mont-Saint-Michel → Château La Rametière",
+  "map": {
+    "image": "day-07-route",
+    "label": "TOURGÉVILLE → OMAHA BEACH → MONT-SAINT-MICHEL → CHÂTEAU"
+  },
+  "timeline": [
       {
         "title": "酒店出发 · 前往奥马哈滩",
         "location": "Omaha Beach",

@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import travelData from "./data/travel-data.json";
+import day07RouteMap from "./assets/maps/day-07-route.png";
 import day08RouteMap from "./assets/maps/day-08-route.png";
 import "./styles/app.css";
 
 const routeMaps = {
+  "day-07-route": day07RouteMap,
   "day-08-route": day08RouteMap,
 };
 
