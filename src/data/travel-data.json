@@ -712,6 +712,10 @@
     "date": "2026-10-03",
     "title": "卢瓦尔城堡巡游 → 枫丹白露",
     "route": "Fontevraud → Amboise → Chambord → Orléans → Fontainebleau",
+"map": {
+  "image": "day-09-route",
+  "label": "FONTEVRAUD → AMBOISE → CHAMBORD → ORLÉANS → FONTAINEBLEAU"
+},
     "timeline": [
       {
         "title": "丰泰夫罗 → 安布瓦城堡",
