@@ -645,12 +645,16 @@
     ]
   },
 
-  {
-    "day": 8,
-    "date": "2026-10-02",
-    "title": "南特机械岛 → 丰泰夫罗",
-    "route": "Château La Rametière → Nantes → Fontevraud",
-    "timeline": [
+{
+  "day": 8,
+  "date": "2026-10-02",
+  "title": "南特机械岛 → 丰泰夫罗",
+  "route": "Château La Rametière → Nantes → Fontevraud",
+  "map": {
+    "image": "day-08-route",
+    "label": "CHATEAU → NANTES → FONTEVRAUD"
+  },
+  "timeline": [
       {
         "time": "09:00",
         "title": "从 Château La Rametière 出发",
