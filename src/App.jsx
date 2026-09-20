@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import travelData from "./data/travel-data.json";
 import day01RouteMap from "./assets/maps/day-01-route.png";
 import day02RouteMap from "./assets/maps/day-02-route.png";
@@ -436,6 +436,33 @@ function JourneySection() {
   const [openDay, setOpenDay] = useState(
     today ? today.day : null
   );
+  const dayRefs = useRef({});
+
+  const handleDayToggle = (dayNumber) => {
+    const isClosing = openDay === dayNumber;
+
+    setOpenDay(isClosing ? null : dayNumber);
+
+    if (!isClosing) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          const element = dayRefs.current[dayNumber];
+
+          if (!element) return;
+
+          const top =
+            element.getBoundingClientRect().top +
+            window.scrollY -
+            16;
+
+          window.scrollTo({
+            top,
+            behavior: "smooth",
+          });
+        });
+      });
+    }
+  };
   return (
     <section id="journey" className="content-section journey-section">
       <SectionHeading number="02" label="JOURNEY" title="法国 · 10日" />
@@ -546,21 +573,25 @@ function JourneySection() {
 )}
 
 <div className="journey-list">
-        {travelData.days.map((day) => {
+               {travelData.days.map((day) => {
           const isOpen = openDay === day.day;
-  const isToday =
-    tripStatus.phase === "traveling" &&
-    today?.day === day.day;
+          const isToday =
+            tripStatus.phase === "traveling" &&
+            today?.day === day.day;
+
           return (
             <article
               className={`day ${isOpen ? "day-open" : ""} ${
-  isToday ? "day-today" : ""
-}`}
+                isToday ? "day-today" : ""
+              }`}
               key={day.day}
+              ref={(element) => {
+                dayRefs.current[day.day] = element;
+              }}
             >
               <button
                 className="day-button"
-                onClick={() => setOpenDay(isOpen ? null : day.day)}
+                onClick={() => handleDayToggle(day.day)}
               >
                 <div className="day-index">
                   <span>DAY</span>
