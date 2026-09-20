@@ -384,6 +384,10 @@
     "date": "2026-09-27",
     "title": "艺术家的一天",
     "route": "Louvre → Orangerie → Orsay → Montmartre",
+"map": {
+  "image": "day-03-route",
+  "label": "LOUVRE → ORANGERIE → ORSAY → MONTMARTRE → SEINE"
+},
     "timeline": [
       {
         "time": "08:30",
