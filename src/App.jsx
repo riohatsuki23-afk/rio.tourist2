@@ -395,6 +395,8 @@ function DayRouteMap({ day }) {
           className="route-map-image"
           src={mapImage}
           alt={`${day.title} route map`}
+          loading="lazy"
+          decoding="async"
         />
       </div>
     </div>
