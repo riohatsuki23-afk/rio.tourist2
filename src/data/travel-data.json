@@ -300,6 +300,10 @@
     "date": "2026-09-26",
     "title": "文青 day",
     "route": "Paris City Walk",
+"map": {
+  "image": "day-02-route",
+  "label": "SAINTE-CHAPELLE → SHAKESPEARE AND COMPANY → KOZY → AMORINO → LUXEMBOURG GARDENS → LE BON MARCHÉ → CITÉ DE L'ARCHITECTURE → NOTRE-DAME"
+},
     "timeline": [
       {
         "time": "08:30",
