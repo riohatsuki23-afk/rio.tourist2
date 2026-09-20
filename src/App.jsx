@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import travelData from "./data/travel-data.json";
+import day05RouteMap from "./assets/maps/day-05-route.png";
 import day06RouteMap from "./assets/maps/day-06-route.png";
 import day07RouteMap from "./assets/maps/day-07-route.png";
 import day08RouteMap from "./assets/maps/day-08-route.png";
@@ -7,6 +8,7 @@ import day09RouteMap from "./assets/maps/day-09-route.png";
 import "./styles/app.css";
 
 const routeMaps = {
+  "day-05-route": day05RouteMap,
   "day-06-route": day06RouteMap,
   "day-07-route": day07RouteMap,
   "day-08-route": day08RouteMap,

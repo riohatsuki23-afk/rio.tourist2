@@ -478,6 +478,10 @@
     "date": "2026-09-29",
     "title": "姐就是女王 day",
     "route": "Paris → Versailles → Paris",
+"map": {
+  "image": "day-05-route",
+  "label": "PARIS → VERSAILLES → ARC DE TRIOMPHE → GALERIES LAFAYETTE → EIFFEL TOWER"
+},
     "timeline": [
       {
         "time": "08:30",
